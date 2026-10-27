@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/logo.png" width="160" alt="GregTech Infinity Ascension logo" />
+</p>
+
 # GTIA Lib
 
 Shared library of the [GregTech Infinity Ascension](https://github.com/GTInfinityAscension) mods (GTIACore, GTNA, Agronomica and future addons). Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
