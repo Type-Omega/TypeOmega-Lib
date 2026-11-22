@@ -24,4 +24,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           V="${GITHUB_REF_NAME#v}"
-          gh release create "$GITHUB_REF_NAME" --title "GTIA Lib $V" --generate-notes "build/libs/gtialib-$V.jar"
+          gh release create "$GITHUB_REF_NAME" --title "TypeOmega Lib $V" --generate-notes "build/libs/typeomega-lib-$V.jar"

@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib;
+package com.typeomega.lib;
 
 import net.minecraft.gametest.framework.GlobalTestReporter;
 import net.minecraft.gametest.framework.JUnitLikeTestReporter;
@@ -8,10 +8,10 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import com.gtinfinityascension.gtialib.lang.TrLanguageProvider;
-import com.gtinfinityascension.gtialib.module.ModuleRegistry;
-import com.gtinfinityascension.gtialib.perf.BenchCommand;
-import com.gtinfinityascension.gtialib.tooltip.MultiblockTooltip;
+import com.typeomega.lib.lang.TrLanguageProvider;
+import com.typeomega.lib.module.ModuleRegistry;
+import com.typeomega.lib.perf.BenchCommand;
+import com.typeomega.lib.tooltip.MultiblockTooltip;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,11 +21,11 @@ import java.io.File;
 @SuppressWarnings("removal")
 public final class GTIALib {
 
-    public static final String MOD_ID = "gtialib";
+    public static final String MOD_ID = "typeomegalib";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-    /** {@code -Dgtialib.junitReport=<file>} writes GameTest results as JUnit XML, for CI. */
-    public static final String JUNIT_PROPERTY = "gtialib.junitReport";
+    /** {@code -Dtypeomegalib.junitReport=<file>} writes GameTest results as JUnit XML, for CI. */
+    public static final String JUNIT_PROPERTY = "typeomegalib.junitReport";
 
     public GTIALib() {
         MultiblockTooltip.init();

@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.test;
+package com.typeomega.lib.test;
 
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;

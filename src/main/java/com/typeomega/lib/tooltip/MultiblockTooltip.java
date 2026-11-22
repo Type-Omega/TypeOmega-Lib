@@ -1,9 +1,9 @@
-package com.gtinfinityascension.gtialib.tooltip;
+package com.typeomega.lib.tooltip;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
-import com.gtinfinityascension.gtialib.lang.Tr;
+import com.typeomega.lib.lang.Tr;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +17,13 @@ import java.util.List;
  */
 public final class MultiblockTooltip {
 
-    private static final Tr MAIN = Tr.of("gtialib.tooltip.section.main", "Main Function", "Função Principal", "主要功能");
-    private static final Tr AUXILIARY = Tr.of("gtialib.tooltip.section.auxiliary", "Auxiliary Module",
+    private static final Tr MAIN = Tr.of("typeomegalib.tooltip.section.main", "Main Function", "Função Principal",
+            "主要功能");
+    private static final Tr AUXILIARY = Tr.of("typeomegalib.tooltip.section.auxiliary", "Auxiliary Module",
             "Módulo Auxiliar", "辅助模块");
-    private static final Tr REQUIREMENTS = Tr.of("gtialib.tooltip.section.requirements", "Running Requirements",
+    private static final Tr REQUIREMENTS = Tr.of("typeomegalib.tooltip.section.requirements", "Running Requirements",
             "Requisitos de Funcionamento", "运行要求");
-    private static final Tr SOURCE = Tr.of("gtialib.tooltip.source", "Source: %s", "Origem: %s", "来源：%s");
+    private static final Tr SOURCE = Tr.of("typeomegalib.tooltip.source", "Source: %s", "Origem: %s", "来源：%s");
 
     private final String prefix;
     private Tr fact;
@@ -35,7 +36,7 @@ public final class MultiblockTooltip {
         this.prefix = namespace + ".machine." + machineId + ".tooltip.";
     }
 
-    /** Declares the shared section headers; called by GTIA Lib at startup so datagen sees them. */
+    /** Declares the shared section headers; called by TypeOmega Lib at startup so datagen sees them. */
     public static void init() {}
 
     public static MultiblockTooltip of(String namespace, String machineId) {

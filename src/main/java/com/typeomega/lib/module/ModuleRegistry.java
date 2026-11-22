@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.module;
+package com.typeomega.lib.module;
 
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.pattern.BlockPattern;
@@ -7,7 +7,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-import com.gtinfinityascension.gtialib.lang.Tr;
+import com.typeomega.lib.lang.Tr;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,14 +34,14 @@ public final class ModuleRegistry {
     private static final Map<Function<MultiblockMachineDefinition, BlockPattern>, Performance> KUBE_PERFORMANCE = new IdentityHashMap<>();
     private static final Map<BlockPattern, Performance> BUILT_PERFORMANCE = new IdentityHashMap<>();
 
-    private static final Tr AUXILIARY = Tr.of("gtialib.module.auxiliary", "- Auxiliary Module: ✔",
+    private static final Tr AUXILIARY = Tr.of("typeomegalib.module.auxiliary", "- Auxiliary Module: ✔",
             "- Módulo auxiliar: ✔", "- 辅助模块：✔");
 
     public record Performance(double speedBonus, boolean perfectOverclock) {}
 
     private ModuleRegistry() {}
 
-    /** Declares the registry's texts; called by GTIA Lib at startup so datagen sees them. */
+    /** Declares the registry's texts; called by TypeOmega Lib at startup so datagen sees them. */
     public static void init() {}
 
     /** Registers one extension structure for the machine {@code machineId}. */

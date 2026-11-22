@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.gametest;
+package com.typeomega.lib.gametest;
 
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
@@ -6,10 +6,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
-import com.gtinfinityascension.gtialib.GTIALib;
-import com.gtinfinityascension.gtialib.lang.Tr;
-import com.gtinfinityascension.gtialib.test.Sweeps;
-import com.gtinfinityascension.gtialib.tooltip.MultiblockTooltip;
+import com.typeomega.lib.GTIALib;
+import com.typeomega.lib.lang.Tr;
+import com.typeomega.lib.test.Sweeps;
+import com.typeomega.lib.tooltip.MultiblockTooltip;
 
 /** Checks the library against itself and against GTCEu's own content. */
 @PrefixGameTestTemplate(false)
@@ -22,7 +22,7 @@ public final class LibGameTests {
     public static void translationsNeedAllThreeLanguages(GameTestHelper h) {
         boolean rejected = false;
         try {
-            Tr.of("gtialib.test.missing", "Text", "Texto", " ");
+            Tr.of("typeomegalib.test.missing", "Text", "Texto", " ");
         } catch (IllegalArgumentException expected) {
             rejected = true;
         }
@@ -32,12 +32,12 @@ public final class LibGameTests {
 
     @GameTest(template = "qa_empty_5x5", timeoutTicks = 20)
     public static void aKeyCannotBeRedeclaredWithOtherText(GameTestHelper h) {
-        Tr.of("gtialib.test.same", "One", "Um", "一");
-        h.assertTrue(Tr.of("gtialib.test.same", "One", "Um", "一").text(Tr.PT).equals("Um"),
+        Tr.of("typeomegalib.test.same", "One", "Um", "一");
+        h.assertTrue(Tr.of("typeomegalib.test.same", "One", "Um", "一").text(Tr.PT).equals("Um"),
                 "the same declaration twice should return the first one");
         boolean rejected = false;
         try {
-            Tr.of("gtialib.test.same", "Two", "Dois", "二");
+            Tr.of("typeomegalib.test.same", "Two", "Dois", "二");
         } catch (IllegalStateException expected) {
             rejected = true;
         }
@@ -47,7 +47,7 @@ public final class LibGameTests {
 
     @GameTest(template = "qa_empty_5x5", timeoutTicks = 20)
     public static void multiblockTooltipFollowsTheGtnaLayout(GameTestHelper h) {
-        Component[] lines = MultiblockTooltip.of("gtialib", "test_machine")
+        Component[] lines = MultiblockTooltip.of("typeomegalib", "test_machine")
                 .fact("A fact", "Um fato", "一个事实")
                 .main("Does a thing", "Faz uma coisa", "做一件事")
                 .requirement("Needs power", "Precisa de energia", "需要能量")

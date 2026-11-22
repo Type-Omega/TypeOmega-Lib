@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.gametest;
+package com.typeomega.lib.gametest;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTest;
@@ -6,10 +6,10 @@ import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
-import com.gtinfinityascension.gtialib.GTIALib;
-import com.gtinfinityascension.gtialib.data.BlockPosHashing;
-import com.gtinfinityascension.gtialib.data.BlockPosLongSet;
-import com.gtinfinityascension.gtialib.data.Int128;
+import com.typeomega.lib.GTIALib;
+import com.typeomega.lib.data.BlockPosHashing;
+import com.typeomega.lib.data.BlockPosLongSet;
+import com.typeomega.lib.data.Int128;
 
 import java.math.BigInteger;
 import java.util.Random;

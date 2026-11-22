@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.lang;
+package com.typeomega.lib.lang;
 
 import com.tterrag.registrate.AbstractRegistrate;
 

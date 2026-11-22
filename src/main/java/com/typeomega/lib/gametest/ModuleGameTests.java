@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.gametest;
+package com.typeomega.lib.gametest;
 
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
@@ -8,8 +8,8 @@ import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
-import com.gtinfinityascension.gtialib.GTIALib;
-import com.gtinfinityascension.gtialib.module.ModuleRegistry;
+import com.typeomega.lib.GTIALib;
+import com.typeomega.lib.module.ModuleRegistry;
 
 /** The module registry builds registered structures once, and KubeJS modules can be cleared on reload. */
 @PrefixGameTestTemplate(false)
@@ -28,7 +28,7 @@ public final class ModuleGameTests {
         ModuleRegistry.registerKubeJS(ebf.getId(), def -> {
             built[0]++;
             return def.getPatternFactory().get();
-        }, "gtialib.test.module", 2.0, true);
+        }, "typeomegalib.test.module", 2.0, true);
         var modules = ModuleRegistry.get(ebf);
         h.assertTrue(modules.size() == before + 1, "the module is registered");
         h.assertTrue(ModuleRegistry.get(ebf) == modules && built[0] == 1, "modules are built once and cached");

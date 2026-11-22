@@ -2,7 +2,7 @@
   <img src="docs/assets/logo.png" width="160" alt="GregTech Infinity Ascension logo" />
 </p>
 
-# GTIA Lib
+# TypeOmega Lib
 
 Shared library of the [GregTech Infinity Ascension](https://github.com/GTInfinityAscension) mods (GTIACore, GTNA, Agronomica and future addons). Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
 
@@ -18,8 +18,8 @@ Community: [Discord](https://discord.gg/TW5vugknk5) · questions, bug reports an
 | `tooltip` | `MultiblockTooltip`: the GTNA multiblock layout (fact, Main Function, Auxiliary Module, Running Requirements, Source) |
 | `data` | `Int128` (128-bit counts, from GTLCore via GTNA), `BlockPosLongSet` and `BlockPosHashing` (fast sets and maps of positions for huge structures) |
 | `module` | `ModuleRegistry`: multiblock modules (extra structures that unlock abilities when they match), from Java or KubeJS. GTNA checks them on every multiblock; its `GTNASubPatterns` forwards here |
-| `perf` | `/gtialib bench grid <machine> <count> [input]` places a force-loaded grid of GT machines (kept running when an input item is given) and `/gtialib bench mspt <ticks>` logs the average tick time; used by the modpack's `tools/perf_bench.py` |
-| `test` | GameTest kit: `Previews.place` builds a multiblock from its preview; `Sweeps` checks every multiblock, GT recipe, machine tooltip and translation of a mod; `-Dgtialib.junitReport=<file>` writes JUnit XML for CI |
+| `perf` | `/typeomegalib bench grid <machine> <count> [input]` places a force-loaded grid of GT machines (kept running when an input item is given) and `/typeomegalib bench mspt <ticks>` logs the average tick time; used by the modpack's `tools/perf_bench.py` |
+| `test` | GameTest kit: `Previews.place` builds a multiblock from its preview; `Sweeps` checks every multiblock, GT recipe, machine tooltip and translation of a mod; `-Dtypeomegalib.junitReport=<file>` writes JUnit XML for CI |
 
 Planned: registration helpers, batched field sync, recipe helpers and measured performance work. See the [developer docs](https://gtinfinityascension.github.io/GTIA-Dev-Doc/).
 
@@ -30,7 +30,7 @@ repositories {
     maven { url = 'https://gtinfinityascension.github.io/maven/' }
 }
 dependencies {
-    modImplementation("com.gtinfinityascension:gtialib:0.5.0") { transitive = false }
+    modImplementation("com.typeomega:typeomega-lib:0.5.0") { transitive = false }
 }
 ```
 

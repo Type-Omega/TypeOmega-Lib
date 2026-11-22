@@ -1,0 +1,7 @@
+{
+  "typeomegalib.module.auxiliary": "- Auxiliary Module: ✔",
+  "typeomegalib.tooltip.section.auxiliary": "Auxiliary Module",
+  "typeomegalib.tooltip.section.main": "Main Function",
+  "typeomegalib.tooltip.section.requirements": "Running Requirements",
+  "typeomegalib.tooltip.source": "Source: %s"
+}

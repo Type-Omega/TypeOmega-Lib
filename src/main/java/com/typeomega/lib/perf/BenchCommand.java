@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.perf;
+package com.typeomega.lib.perf;
 
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
@@ -18,16 +18,16 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 
-import com.gtinfinityascension.gtialib.GTIALib;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
+import com.typeomega.lib.GTIALib;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * {@code /gtialib bench grid <machine> <count>} places that many machines in a force-loaded grid, and
- * {@code /gtialib bench mspt <ticks>} logs the average server tick time over the next ticks as
+ * {@code /typeomegalib bench grid <machine> <count>} places that many machines in a force-loaded grid, and
+ * {@code /typeomegalib bench mspt <ticks>} logs the average server tick time over the next ticks as
  * {@code BENCH mspt=<ms>}. Used by the modpack's perf_bench.py to compare optimizations; needs permission level 2.
  */
 public final class BenchCommand {

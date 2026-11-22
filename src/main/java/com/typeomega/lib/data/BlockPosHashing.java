@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.data;
+package com.typeomega.lib.data;
 
 import net.minecraft.core.BlockPos;
 

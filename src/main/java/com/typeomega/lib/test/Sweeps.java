@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.test;
+package com.typeomega.lib.test;
 
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.gtinfinityascension.gtialib.lang.Tr;
+import com.typeomega.lib.lang.Tr;
 
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;

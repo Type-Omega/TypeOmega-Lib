@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.test;
+package com.typeomega.lib.test;
 
 import net.minecraft.gametest.framework.GameTestHelper;
 

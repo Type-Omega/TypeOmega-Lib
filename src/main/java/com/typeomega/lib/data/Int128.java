@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.data;
+package com.typeomega.lib.data;
 
 import com.google.common.primitives.Ints;
 import org.jetbrains.annotations.NotNull;

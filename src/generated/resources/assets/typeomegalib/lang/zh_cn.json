@@ -1,0 +1,7 @@
+{
+  "typeomegalib.module.auxiliary": "- 辅助模块：✔",
+  "typeomegalib.tooltip.section.auxiliary": "辅助模块",
+  "typeomegalib.tooltip.section.main": "主要功能",
+  "typeomegalib.tooltip.section.requirements": "运行要求",
+  "typeomegalib.tooltip.source": "来源：%s"
+}

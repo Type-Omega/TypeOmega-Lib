@@ -1,4 +1,4 @@
-package com.gtinfinityascension.gtialib.lang;
+package com.typeomega.lib.lang;
 
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
