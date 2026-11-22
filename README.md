@@ -8,6 +8,8 @@ Shared library of the [GregTech Infinity Ascension](https://github.com/GTInfinit
 
 > **Status: 0.5.0.** The API may still change before 1.0.
 
+Community: [Discord](https://discord.gg/TW5vugknk5) · questions, bug reports and playtesting.
+
 ## What it has
 
 | Package | What it does |
