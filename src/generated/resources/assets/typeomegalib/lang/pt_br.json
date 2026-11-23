@@ -3,13 +3,11 @@
   "typeomegalib.tooltip.hatch.laser": "Escotilhas Laser",
   "typeomegalib.tooltip.hatch.multi_amp": "Multi-Amp",
   "typeomegalib.tooltip.hatch.wireless": "Escotilhas sem Fio",
-  "typeomegalib.tooltip.key.shift": "[LSHIFT]",
   "typeomegalib.tooltip.list.and": "%s e %s",
   "typeomegalib.tooltip.machine_type": "Tipo de Máquina: %s",
   "typeomegalib.tooltip.section.auxiliary": "Módulo Auxiliar",
   "typeomegalib.tooltip.section.main": "Função Principal",
   "typeomegalib.tooltip.section.requirements": "Requisitos de Funcionamento",
   "typeomegalib.tooltip.source": "Origem: %s",
-  "typeomegalib.tooltip.structure_hint": "Segure %s para ver as instruções da estrutura",
   "typeomegalib.tooltip.supports": "Suporta %s!"
 }

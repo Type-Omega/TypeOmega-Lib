@@ -12,8 +12,11 @@ import java.util.List;
 
 /**
  * Multiblock tooltip in the GTNH layout (GTIA-D-410): {@code Machine Type:} with yellow types, short description
- * lines, separators, table rows, warnings, the green supported-hatches line, the structure hint and the mod name in
- * blue italics. Every text is a {@link Tr} with arguments, so numbers come from the machine's balance definition.
+ * lines, separators, table rows, warnings, the green supported-hatches line and the mod name in blue italics. Every
+ * text is a {@link Tr} with arguments, so numbers come from the machine's balance definition.
+ * <p>
+ * There is no "Hold [LSHIFT] to display structure guidelines" line on purpose (GTIA-D-428): Shift does not show the
+ * structure in GTCEu, so the line would promise something the game does not do.
  * <p>
  * The result plugs into GTCEu: {@code .tooltips(tooltip.toArray())} or
  * {@code .tooltipBuilder((stack, list) -> list.addAll(tooltip.build()))}.
@@ -79,14 +82,6 @@ public final class MultiblockTooltipBuilder {
                     list.append(", ").append(next);
         }
         return add(TooltipTexts.SUPPORTS.component(list).withStyle(ChatFormatting.GREEN));
-    }
-
-    /** Separator plus "Hold [LSHIFT] to display structure guidelines". */
-    public MultiblockTooltipBuilder structureHint() {
-        separator();
-        return add(TooltipTexts.STRUCTURE_HINT
-                .component(TooltipTexts.SHIFT_KEY.component().withStyle(ChatFormatting.WHITE))
-                .withStyle(ChatFormatting.GRAY));
     }
 
     /** Last line: the mod name in blue italics; a proper name, so it is not translated. */

@@ -33,7 +33,6 @@ class MultiblockTooltipBuilderTest {
                 .line(NOT_RETURNED, TooltipArg.emphasis(NOT))
                 .hatches(Hatch.MULTI_AMP, Hatch.LASER, Hatch.WIRELESS)
                 .humor(TYPE)
-                .structureHint()
                 .mod("GregTech Nexus Addon")
                 .build();
     }
@@ -49,13 +48,12 @@ class MultiblockTooltipBuilderTest {
     @Test
     void keepsGtnhOrder() {
         List<Component> lines = full();
-        assertEquals(11, lines.size());
+        assertEquals(9, lines.size());
         assertEquals("typeomegalib.tooltip.machine_type", key(lines.get(0)));
         assertEquals("test.line.drain", key(lines.get(1)));
         assertEquals(MultiblockTooltipBuilder.SEPARATOR, lines.get(2).getString());
         assertEquals("typeomegalib.tooltip.supports", key(lines.get(6)));
-        assertEquals("typeomegalib.tooltip.structure_hint", key(lines.get(9)));
-        Component mod = lines.get(10);
+        Component mod = lines.get(8);
         assertEquals("GregTech Nexus Addon", mod.getString());
         assertEquals(TextColor.fromLegacyFormat(ChatFormatting.BLUE), mod.getStyle().getColor());
         assertTrue(mod.getStyle().isItalic());
@@ -99,8 +97,8 @@ class MultiblockTooltipBuilderTest {
 
     @Test
     void humorIsOptional() {
-        List<Component> lines = MultiblockTooltip.builder().machineType(TYPE).structureHint().mod("M").build();
-        assertEquals(4, lines.size());
+        List<Component> lines = MultiblockTooltip.builder().machineType(TYPE).mod("M").build();
+        assertEquals(2, lines.size());
     }
 
     @Test
@@ -114,8 +112,8 @@ class MultiblockTooltipBuilderTest {
 
     @Test
     void arrayFormForGtceu() {
-        assertEquals(11, MultiblockTooltip.builder().machineType(TYPE).line(DRAIN).separator()
+        assertEquals(9, MultiblockTooltip.builder().machineType(TYPE).line(DRAIN).separator()
                 .table(TooltipRow.of(FORCE, ChatFormatting.GOLD, 1)).separator().line(DRAIN).hatches(Hatch.LASER)
-                .humor(TYPE).structureHint().mod("M").toArray().length);
+                .humor(TYPE).mod("M").toArray().length);
     }
 }
