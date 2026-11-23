@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Multiblock tooltip in the GTNA layout: an optional real-world fact in grey italics, then "Main Function",
+ * Legacy multiblock tooltip in the GTNA layout (new machines use {@link #builder()}): an optional real-world fact in
+ * grey italics, then "Main Function",
  * "Auxiliary Module" (only when the structure has one) and "Running Requirements", each line a yellow "∘" item,
  * and an optional "Source:" line crediting the mod a port came from.
  * <p>
@@ -37,7 +38,15 @@ public final class MultiblockTooltip {
     }
 
     /** Declares the shared section headers; called by TypeOmega Lib at startup so datagen sees them. */
-    public static void init() {}
+    public static void init() {
+        Hatch.values();
+        TooltipTexts.MACHINE_TYPE.key();
+    }
+
+    /** The GTNH-style tooltip (GTIA-D-410); prefer it for new multiblocks. */
+    public static MultiblockTooltipBuilder builder() {
+        return new MultiblockTooltipBuilder();
+    }
 
     public static MultiblockTooltip of(String namespace, String machineId) {
         return new MultiblockTooltip(namespace, machineId);

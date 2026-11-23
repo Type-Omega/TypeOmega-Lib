@@ -1,7 +1,15 @@
 {
   "typeomegalib.module.auxiliary": "- Auxiliary Module: ✔",
+  "typeomegalib.tooltip.hatch.laser": "Laser Hatches",
+  "typeomegalib.tooltip.hatch.multi_amp": "Multi-Amp",
+  "typeomegalib.tooltip.hatch.wireless": "Wireless Hatches",
+  "typeomegalib.tooltip.key.shift": "[LSHIFT]",
+  "typeomegalib.tooltip.list.and": "%s and %s",
+  "typeomegalib.tooltip.machine_type": "Machine Type: %s",
   "typeomegalib.tooltip.section.auxiliary": "Auxiliary Module",
   "typeomegalib.tooltip.section.main": "Main Function",
   "typeomegalib.tooltip.section.requirements": "Running Requirements",
-  "typeomegalib.tooltip.source": "Source: %s"
+  "typeomegalib.tooltip.source": "Source: %s",
+  "typeomegalib.tooltip.structure_hint": "Hold %s to display structure guidelines",
+  "typeomegalib.tooltip.supports": "Supports %s!"
 }

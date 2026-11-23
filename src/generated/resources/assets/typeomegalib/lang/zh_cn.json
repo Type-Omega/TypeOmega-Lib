@@ -1,7 +1,15 @@
 {
   "typeomegalib.module.auxiliary": "- 辅助模块：✔",
+  "typeomegalib.tooltip.hatch.laser": "激光仓",
+  "typeomegalib.tooltip.hatch.multi_amp": "多安",
+  "typeomegalib.tooltip.hatch.wireless": "无线仓",
+  "typeomegalib.tooltip.key.shift": "[LSHIFT]",
+  "typeomegalib.tooltip.list.and": "%s和%s",
+  "typeomegalib.tooltip.machine_type": "机器类型：%s",
   "typeomegalib.tooltip.section.auxiliary": "辅助模块",
   "typeomegalib.tooltip.section.main": "主要功能",
   "typeomegalib.tooltip.section.requirements": "运行要求",
-  "typeomegalib.tooltip.source": "来源：%s"
+  "typeomegalib.tooltip.source": "来源：%s",
+  "typeomegalib.tooltip.structure_hint": "按住%s查看结构指引",
+  "typeomegalib.tooltip.supports": "支持%s！"
 }

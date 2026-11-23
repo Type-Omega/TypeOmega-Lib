@@ -134,6 +134,9 @@ dependencies {
     modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
@@ -174,4 +177,12 @@ publishing {
             from components.java
         }
     }
+}
+
+// Legacy Forge has no unitTest DSL: plain JUnit sees Minecraft through the main compile classpath.
+sourceSets.test.compileClasspath += sourceSets.main.compileClasspath
+sourceSets.test.runtimeClasspath += sourceSets.main.compileClasspath
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
 }
