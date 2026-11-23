@@ -4,7 +4,7 @@
 
 # TypeOmega Lib
 
-Shared library of the [GregTech Infinity Ascension](https://github.com/GTInfinityAscension) mods (GTIACore, GTNA, Agronomica and future addons). Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
+Shared library of the [GregTech Infinity Ascension](https://github.com/Type-Omega) mods (GTIACore, GTNA, Agronomica and future addons). Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
 
 > **Status: 0.5.0.** The API may still change before 1.0.
 
@@ -21,13 +21,13 @@ Community: [Discord](https://discord.gg/TW5vugknk5) · questions, bug reports an
 | `perf` | `/typeomegalib bench grid <machine> <count> [input]` places a force-loaded grid of GT machines (kept running when an input item is given) and `/typeomegalib bench mspt <ticks>` logs the average tick time; used by the modpack's `tools/perf_bench.py` |
 | `test` | GameTest kit: `Previews.place` builds a multiblock from its preview; `Sweeps` checks every multiblock, GT recipe, machine tooltip and translation of a mod; `-Dtypeomegalib.junitReport=<file>` writes JUnit XML for CI |
 
-Planned: registration helpers, batched field sync, recipe helpers and measured performance work. See the [developer docs](https://gtinfinityascension.github.io/GTIA-Dev-Doc/).
+Planned: registration helpers, batched field sync, recipe helpers and measured performance work. See the [developer docs](https://type-omega.github.io/TypeOmega-Dev-Doc/).
 
 ## Use it
 
 ```groovy
 repositories {
-    maven { url = 'https://gtinfinityascension.github.io/maven/' }
+    maven { url = 'https://type-omega.github.io/maven/' }
 }
 dependencies {
     modImplementation("com.typeomega:typeomega-lib:0.5.0") { transitive = false }
