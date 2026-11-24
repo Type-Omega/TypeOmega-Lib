@@ -137,6 +137,10 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // EN: LDLib widgets log through slf4j 2 at class init; the compile classpath alone does not carry it.
+    // PT: Os widgets da LDLib usam o slf4j 2 ao carregar a classe; o classpath de compilação sozinho não o traz.
+    // ZH: LDLib 组件在类初始化时通过 slf4j 2 记录日志；仅靠编译类路径不包含它。
+    testRuntimeOnly 'org.slf4j:slf4j-api:2.0.7'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 

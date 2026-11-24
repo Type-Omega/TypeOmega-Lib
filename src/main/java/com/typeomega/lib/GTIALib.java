@@ -29,6 +29,7 @@ public final class GTIALib {
 
     public GTIALib() {
         MultiblockTooltip.init();
+        com.typeomega.lib.ui.UiTexts.init();
         ModuleRegistry.init();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(GTIALib::gatherData);
         MinecraftForge.EVENT_BUS.addListener(GTIALib::serverStarting);

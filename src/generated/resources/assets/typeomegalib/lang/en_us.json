@@ -57,5 +57,10 @@
   "typeomegalib.tooltip.structure.special_block": "Special block",
   "typeomegalib.tooltip.structure.tiered": "(Tiered)",
   "typeomegalib.tooltip.structure.top": "top",
-  "typeomegalib.tooltip.supports": "Supports %s!"
+  "typeomegalib.tooltip.supports": "Supports %s!",
+  "typeomegalib.ui.continuous": "Time: runs continuously",
+  "typeomegalib.ui.output": "Output: %s EU/t (%s)",
+  "typeomegalib.ui.time": "Time: %s seconds",
+  "typeomegalib.ui.total": "Total: %s EU",
+  "typeomegalib.ui.usage": "Usage: %s EU/t (%s)"
 }

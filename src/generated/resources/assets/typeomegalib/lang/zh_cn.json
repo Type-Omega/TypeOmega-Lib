@@ -57,5 +57,10 @@
   "typeomegalib.tooltip.structure.special_block": "特殊方块",
   "typeomegalib.tooltip.structure.tiered": "（分级）",
   "typeomegalib.tooltip.structure.top": "顶部",
-  "typeomegalib.tooltip.supports": "支持%s！"
+  "typeomegalib.tooltip.supports": "支持%s！",
+  "typeomegalib.ui.continuous": "耗时：持续运行",
+  "typeomegalib.ui.output": "产能：%s EU/t（%s）",
+  "typeomegalib.ui.time": "耗时：%s 秒",
+  "typeomegalib.ui.total": "总计：%s EU",
+  "typeomegalib.ui.usage": "耗能：%s EU/t（%s）"
 }
