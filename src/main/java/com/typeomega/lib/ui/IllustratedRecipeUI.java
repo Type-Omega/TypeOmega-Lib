@@ -23,7 +23,7 @@ import com.lowdragmc.lowdraglib.utils.Size;
 import java.util.function.BiConsumer;
 
 /**
- * A GTCEu recipe UI drawn on an illustrated panel (GTIA-D-434, U4: {@code setRecipeUI} for recipe types whose screen
+ * A GTCEu recipe UI drawn on an illustrated panel (GTIA-D-435, U4: {@code setRecipeUI} for recipe types whose screen
  * is built in code). The slots and tanks keep the GTCEu ids ({@code item_in_0}, {@code fluid_out_1}...), so GTCEu
  * fills them in EMI, JEI and in the machine GUI exactly as on its own template. The text under the picture is the
  * panel's: Total, Usage with the tier colour, Time and the lines the recipe type adds.
@@ -135,7 +135,7 @@ public class IllustratedRecipeUI extends GTRecipeTypeUI {
     }
 
     /**
-     * For a recipe type whose fixed screen comes from a {@code .rtui} file (GTIA-D-434, U4): pass the result to
+     * For a recipe type whose fixed screen comes from a {@code .rtui} file (GTIA-D-435, U4): pass the result to
      * {@code setUiBuilder}. It writes the GTNH-style lines at {@code top} (the picture and the slots are in the
      * {@code .rtui}) and hides the default GTCEu text, as {@link IllustratedRecipeUI} does.
      */

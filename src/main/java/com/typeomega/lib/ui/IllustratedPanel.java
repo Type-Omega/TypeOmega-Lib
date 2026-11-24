@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Function;
 
 /**
- * An illustrated panel (GTIA-D-434): the GTCEu bevelled grey background, the picture of the process, the slots and
+ * An illustrated panel (GTIA-D-435): the GTCEu bevelled grey background, the picture of the process, the slots and
  * tanks placed inside it and the text lines under it. The same widget serves the EMI recipe page and the machine GUI;
  * only the slot widgets differ, so they come from a factory.
  */
