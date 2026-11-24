@@ -15,7 +15,7 @@ Community: [Discord](https://discord.gg/TW5vugknk5) · questions, bug reports an
 | Package | What it does |
 | --- | --- |
 | `lang` | `Tr.of(key, en, pt, zh)` declares a text in English, Portuguese and Chinese at once. `TrLanguageProvider` writes the three lang files in datagen, so a text can't be missing in one language |
-| `tooltip` | `MultiblockTooltip`: the GTNA multiblock layout (fact, Main Function, Auxiliary Module, Running Requirements, Source) |
+| `tooltip` | `MultiblockTooltip.builder()`: GTNH-style multiblock tooltip (Machine Type, coloured lines, separators, table rows, modes, pollution, the "Supports ...!" line, mod name). Its structure section (dimensions, controller, block counts, hatches with count and place, blueprint channels) is always shown; `GtceuPatterns.of(definition)` reads it from the GTCEu pattern, so the counts come from the pattern. `MultiblockTooltip.section()` appends it to an existing tooltip. `MultiblockTooltip.of(...)` keeps the older GTNA layout |
 | `data` | `Int128` (128-bit counts, from GTLCore via GTNA), `BlockPosLongSet` and `BlockPosHashing` (fast sets and maps of positions for huge structures) |
 | `module` | `ModuleRegistry`: multiblock modules (extra structures that unlock abilities when they match), from Java or KubeJS. GTNA checks them on every multiblock; its `GTNASubPatterns` forwards here |
 | `perf` | `/typeomegalib bench grid <machine> <count> [input]` places a force-loaded grid of GT machines (kept running when an input item is given) and `/typeomegalib bench mspt <ticks>` logs the average tick time; used by the modpack's `tools/perf_bench.py` |
@@ -30,7 +30,7 @@ repositories {
     maven { url = 'https://type-omega.github.io/maven/' }
 }
 dependencies {
-    modImplementation("com.typeomega:typeomega-lib:0.6.0") { transitive = false }
+    modImplementation("com.typeomega:typeomega-lib:0.6.2") { transitive = false }
 }
 ```
 
@@ -42,6 +42,11 @@ Component[] tooltip = MultiblockTooltip.of("mymod", "big_furnace")
         .main("Smelts 16 ores at once", "Funde 16 minérios de uma vez", "一次熔炼16个矿石")
         .requirement("Needs a Maintenance Hatch", "Precisa de um Maintenance Hatch", "需要维护仓")
         .build();
+
+MultiblockTooltipBuilder b = MultiblockTooltip.builder().machineType(MACERATOR).line(PURPOSE);
+StructureInfo structure = GtceuPatterns.of(MY_MACHINE);
+List<Component> lines = b.modes(GtceuPatterns.modes(MY_MACHINE)).separator()
+        .structure(structure).hatches(structure).mod("My Mod").build();
 
 @GameTest(template = "empty_16", timeoutTicks = 6000)
 public static void everyMultiblockForms(GameTestHelper h) {
