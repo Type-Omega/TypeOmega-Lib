@@ -206,8 +206,10 @@ public final class GtceuPatterns {
         int min = -1;
         int max = -1;
         for (PatternAnalyzer.Option block : blocks) {
-            keys.add(block.key());
-            names.add(block.name());
+            if (!keys.contains(block.key())) {
+                keys.add(block.key());
+                names.add(block.name());
+            }
             if (block.min() >= 0) min = Math.max(min, 0) + block.min();
             if (block.max() >= 0) max = Math.max(max, 0) + block.max();
         }
