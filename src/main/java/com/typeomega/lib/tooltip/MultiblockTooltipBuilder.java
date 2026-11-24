@@ -107,7 +107,7 @@ public final class MultiblockTooltipBuilder {
         return add(StructureTexts.MODES.component(list).withStyle(ChatFormatting.GRAY));
     }
 
-    /** "Causes N Pollution per second", as in GTNH; skipped when the machine does not pollute. */
+    /** "Causes N Pollution per second", as in GTNH; skipped when the machine does not pollute. Type Omega does not use it (GTIA-D-431). */
     public MultiblockTooltipBuilder pollution(int perSecond) {
         if (perSecond <= 0) return this;
         return add(StructureTexts.POLLUTION.component(TooltipArg.value(perSecond)).withStyle(ChatFormatting.GRAY));
@@ -116,6 +116,9 @@ public final class MultiblockTooltipBuilder {
     /**
      * Starts the structure section (GTIA-D-430): "Dimensions: WxHxD (Width x Height x Depth)" and "Structure:".
      * It is always shown: GTCEu has no Shift page for it (GTIA-D-428).
+     * <p>Type Omega does not use the structure methods ({@code beginStructure}, {@code controller}, {@code casing},
+     * {@code tieredCasing}, {@code hatch}, {@code structureNote}, {@code channel}, {@code structure}): GTIA-D-431
+     * keeps the structure section and the pollution line out of its tooltips. Other mods may still call them.
      */
     public MultiblockTooltipBuilder beginStructure(int width, int height, int depth) {
         return beginStructure(StructureInfo.Range.exactly(width), StructureInfo.Range.exactly(height),

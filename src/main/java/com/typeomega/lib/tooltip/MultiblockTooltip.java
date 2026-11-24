@@ -51,7 +51,7 @@ public final class MultiblockTooltip {
 
     /**
      * Lines to append to a tooltip that has its own head, such as an older layout: no Machine Type or mod line is
-     * required. Used to add the structure section (GTIA-D-430) to machines that keep their current text.
+     * required. Used to add lines such as the modes and the "Supports" line to machines that keep their current text.
      */
     public static MultiblockTooltipBuilder section() {
         return new MultiblockTooltipBuilder(true);
