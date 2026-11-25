@@ -1,5 +1,10 @@
 {
+  "typeomegalib.hud.editor.hint": "Arraste um HUD para mover; as posições são salvas automaticamente. ESC fecha.",
+  "typeomegalib.hud.editor.off": "DESLIGADO",
+  "typeomegalib.hud.editor.on": "LIGADO",
+  "typeomegalib.hud.editor.title": "Editor de HUD",
   "typeomegalib.key.category": "TypeOmega Lib",
+  "typeomegalib.key.hud_editor": "Abrir Editor de HUD",
   "typeomegalib.key.tooltip_page": "Próxima página da tooltip",
   "typeomegalib.module.auxiliary": "- Módulo auxiliar: ✔",
   "typeomegalib.tooltip.hatch.laser": "Escotilhas Laser",

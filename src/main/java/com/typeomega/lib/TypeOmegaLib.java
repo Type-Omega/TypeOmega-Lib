@@ -2,16 +2,21 @@ package com.typeomega.lib;
 
 import net.minecraft.gametest.framework.GlobalTestReporter;
 import net.minecraft.gametest.framework.JUnitLikeTestReporter;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 
 import com.typeomega.lib.lang.TrLanguageProvider;
 import com.typeomega.lib.module.ModuleRegistry;
 import com.typeomega.lib.perf.BenchCommand;
 import com.typeomega.lib.tooltip.MultiblockTooltip;
+import com.typeomega.lib.ui.UiTexts;
+import com.typeomega.lib.ui.hud.HudClient;
+import com.typeomega.lib.ui.hud.HudTexts;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,7 +34,11 @@ public final class TypeOmegaLib {
 
     public TypeOmegaLib() {
         MultiblockTooltip.init();
-        com.typeomega.lib.ui.UiTexts.init();
+        UiTexts.init();
+        HudTexts.init();
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            HudClient.init();
+        }
         ModuleRegistry.init();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(TypeOmegaLib::gatherData);
         MinecraftForge.EVENT_BUS.addListener(TypeOmegaLib::serverStarting);

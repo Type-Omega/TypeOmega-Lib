@@ -20,6 +20,7 @@ Community: [Discord](https://discord.gg/TW5vugknk5) · questions, bug reports an
 | `module` | `ModuleRegistry`: multiblock modules (extra structures that unlock abilities when they match), from Java or KubeJS. GTNA checks them on every multiblock; its `GTNASubPatterns` forwards here |
 | `perf` | `/typeomegalib bench grid <machine> <count> [input]` places a force-loaded grid of GT machines (kept running when an input item is given) and `/typeomegalib bench mspt <ticks>` logs the average tick time; used by the modpack's `tools/perf_bench.py` |
 | `ui` | Illustrated recipe screens in the GTNH style (D-435): `PanelLayout` places slots, tanks and marks over a pixel-art picture of the process; `IllustratedPanel` draws it on the GTCEu bevelled grey with the text lines under it (`InfoLines`: Total, Usage with the tier colour, Time, then the recipe type's own lines). `IllustratedRecipeUI` is a `GTRecipeTypeUI` for `setRecipeUI`; `IllustratedRecipeUI.rtuiLines` gives the same lines to a recipe type whose screen is a `.rtui`; `DisplaySlots` makes read-only slots for an EMI page of its own (LDLib `ModularEmiRecipe`); `IllustratedTab` puts the same panel on a machine GUI. Widgets: `ParticleWidget`, `ArrowWidget`, `ProgressBarWidget`, `InfoLinesWidget` |
+| `ui.hud` | Shared moveable HUD overlays (`MoveableHud`, `HudRegistry`, `HudEditorScreen`, `HudPositionStore`): any mod registers HUDs by stable id, positions persist as 0..100% anchors in `config/typeomegalib-huds.json`, and one shared keybind (`H` by default, under `TypeOmega Lib`) opens the drag editor |
 | `test` | GameTest kit: `Previews.place` builds a multiblock from its preview; `Sweeps` checks every multiblock, GT recipe, machine tooltip and translation of a mod; `GameTestFilter` (`-Dtypeomega.tests=...`) filters tests by method, class or batch and skips `TestBatches.HEAVY` (`@HeavyTest`) by default; `-Dtypeomegalib.junitReport=<file>` writes JUnit XML for CI |
 
 Planned: registration helpers, batched field sync, recipe helpers and measured performance work. See the [developer docs](https://type-omega.github.io/TypeOmega-Dev-Doc/).
@@ -66,20 +67,12 @@ Any mod depending on `typeomegalib` gets GameTest filtering automatically via `-
 
 Mark slow tests with `batch = TestBatches.HEAVY` (or `@HeavyTest` on a method/class). Heavy tests are excluded by default and only run when `typeomega.tests` includes `heavy` or `typeomega.tests=all`.
 
-To pass `-Ptests=...` from Gradle, add this line to your `gameTestServer` run block:
+To pass `-Ptests=...` from Gradle, add this line to your `gameTestServer` run block in ModDevGradle (`net.neoforged.moddev.legacyforge`):
 
 ```groovy
-// ModDevGradle (net.neoforged.moddev.legacyforge)
 runs {
     gameTestServer {
         systemProperty('typeomega.tests', project.findProperty('tests') ?: '')
-    }
-}
-
-// ForgeGradle
-runs {
-    gameTestServer {
-        property 'typeomega.tests', project.findProperty('tests') ?: ''
     }
 }
 ```

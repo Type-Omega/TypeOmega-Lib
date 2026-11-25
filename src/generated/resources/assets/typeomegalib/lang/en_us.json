@@ -1,5 +1,10 @@
 {
+  "typeomegalib.hud.editor.hint": "Drag any HUD to move it; positions are saved automatically. ESC closes.",
+  "typeomegalib.hud.editor.off": "OFF",
+  "typeomegalib.hud.editor.on": "ON",
+  "typeomegalib.hud.editor.title": "HUD Editor",
   "typeomegalib.key.category": "TypeOmega Lib",
+  "typeomegalib.key.hud_editor": "Open HUD Editor",
   "typeomegalib.key.tooltip_page": "Next tooltip page",
   "typeomegalib.module.auxiliary": "- Auxiliary Module: ✔",
   "typeomegalib.tooltip.hatch.laser": "Laser Hatches",

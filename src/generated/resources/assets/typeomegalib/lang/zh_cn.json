@@ -1,5 +1,10 @@
 {
+  "typeomegalib.hud.editor.hint": "拖动HUD即可移动，位置会自动保存。按ESC关闭。",
+  "typeomegalib.hud.editor.off": "关",
+  "typeomegalib.hud.editor.on": "开",
+  "typeomegalib.hud.editor.title": "HUD编辑器",
   "typeomegalib.key.category": "TypeOmega Lib",
+  "typeomegalib.key.hud_editor": "打开HUD编辑器",
   "typeomegalib.key.tooltip_page": "下一页提示",
   "typeomegalib.module.auxiliary": "- 辅助模块：✔",
   "typeomegalib.tooltip.hatch.laser": "激光仓",
