@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.typeomega.lib.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "typeomegalib.refmap.json",
+  "minVersion": "0.8",
+  "mixins": [
+    "GameTestRegistryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -103,6 +103,7 @@ legacyForge {
             sourceSet = sourceSets.main
             systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
             systemProperty('typeomegalib.junitReport', file('build/reports/gametest/junit.xml').absolutePath)
+            systemProperty('typeomega.tests', project.findProperty('tests') ?: '')
         }
         data {
             data()
@@ -142,6 +143,7 @@ dependencies {
     // ZH: LDLib 组件在类初始化时通过 slf4j 2 记录日志；仅靠编译类路径不包含它。
     testRuntimeOnly 'org.slf4j:slf4j-api:2.0.7'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -162,7 +164,24 @@ tasks.named('processResources', ProcessResources).configure {
     }
 }
 
+mixin {
+    add sourceSets.main, "${mod_id}.refmap.json"
+}
+
+// EN: ModDevGradle reads the dev manifest from the classes output directory, so copy it there for dev runs.
+// PT: O ModDevGradle lê o manifest de dev na pasta de classes, então copiamos para lá nos runs de dev.
+// ZH: ModDevGradle 从 classes 输出目录读取开发清单，因此将其复制到该目录以供开发运行使用。
+tasks.named('compileJava', JavaCompile).configure {
+    doLast {
+        copy {
+            from 'src/main/resources/META-INF/MANIFEST.MF'
+            into destinationDirectory.dir('META-INF')
+        }
+    }
+}
+
 tasks.named('jar', Jar).configure {
+    manifest.attributes('MixinConfigs': "${mod_id}.mixins.json")
     finalizedBy 'reobfJar'
 }
 tasks.withType(JavaCompile).configureEach {
