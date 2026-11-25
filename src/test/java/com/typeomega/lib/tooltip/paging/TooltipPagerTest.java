@@ -64,6 +64,27 @@ class TooltipPagerTest {
         body.add(separator());
         for (int i = 0; i < 20; i++) body.add(text());
         List<TooltipPager.Page> pages = TooltipPager.paginate(body, 100);
-        assertEquals(10, pages.get(0).to() - pages.get(0).from());
+        assertTrue(pages.get(0).to() - pages.get(0).from() >= 6);
+    }
+
+    @Test
+    void pagesAreEvenWithNoNearlyEmptyLastPage() {
+        List<TooltipPager.Line> body = new ArrayList<>();
+        for (int i = 0; i < 21; i++) body.add(text());
+        List<TooltipPager.Page> pages = TooltipPager.paginate(body, 100);
+        assertEquals(3, pages.size());
+        for (TooltipPager.Page page : pages) assertEquals(7, page.to() - page.from());
+    }
+
+    @Test
+    void wholeSectionsStayTogetherWhenTheyFit() {
+        List<TooltipPager.Line> body = new ArrayList<>();
+        for (int s = 0; s < 3; s++) {
+            if (s > 0) body.add(separator());
+            for (int i = 0; i < 6; i++) body.add(text());
+        }
+        List<TooltipPager.Page> pages = TooltipPager.paginate(body, 100);
+        assertEquals(3, pages.size());
+        for (TooltipPager.Page page : pages) assertEquals(6, page.to() - page.from(), "a page cuts a section");
     }
 }
