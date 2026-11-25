@@ -1,4 +1,6 @@
 {
+  "typeomegalib.key.category": "TypeOmega Lib",
+  "typeomegalib.key.tooltip_page": "下一页提示",
   "typeomegalib.module.auxiliary": "- 辅助模块：✔",
   "typeomegalib.tooltip.hatch.laser": "激光仓",
   "typeomegalib.tooltip.hatch.multi_amp": "多安",
@@ -7,6 +9,8 @@
   "typeomegalib.tooltip.list.or": "%s或%s",
   "typeomegalib.tooltip.machine_type": "机器类型：%s",
   "typeomegalib.tooltip.modes": "模式：%s",
+  "typeomegalib.tooltip.page": "第%s/%s页",
+  "typeomegalib.tooltip.page.hint": "[%s] 下一页，Shift+[%s] 上一页，Ctrl+滚轮",
   "typeomegalib.tooltip.part.computation_data_reception": "算力接收仓",
   "typeomegalib.tooltip.part.computation_data_transmission": "算力传输仓",
   "typeomegalib.tooltip.part.data_access": "数据访问仓",

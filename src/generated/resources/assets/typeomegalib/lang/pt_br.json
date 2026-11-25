@@ -1,4 +1,6 @@
 {
+  "typeomegalib.key.category": "TypeOmega Lib",
+  "typeomegalib.key.tooltip_page": "Próxima página da tooltip",
   "typeomegalib.module.auxiliary": "- Módulo auxiliar: ✔",
   "typeomegalib.tooltip.hatch.laser": "Escotilhas Laser",
   "typeomegalib.tooltip.hatch.multi_amp": "Multi-Amp",
@@ -7,6 +9,8 @@
   "typeomegalib.tooltip.list.or": "%s ou %s",
   "typeomegalib.tooltip.machine_type": "Tipo de Máquina: %s",
   "typeomegalib.tooltip.modes": "Modos: %s",
+  "typeomegalib.tooltip.page": "Página %s/%s",
+  "typeomegalib.tooltip.page.hint": "[%s] avança, Shift+[%s] volta, Ctrl+Roda",
   "typeomegalib.tooltip.part.computation_data_reception": "Escotilha de Recepção de Computação",
   "typeomegalib.tooltip.part.computation_data_transmission": "Escotilha de Transmissão de Computação",
   "typeomegalib.tooltip.part.data_access": "Escotilha de Acesso a Dados",

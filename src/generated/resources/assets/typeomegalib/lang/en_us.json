@@ -1,4 +1,6 @@
 {
+  "typeomegalib.key.category": "TypeOmega Lib",
+  "typeomegalib.key.tooltip_page": "Next tooltip page",
   "typeomegalib.module.auxiliary": "- Auxiliary Module: ✔",
   "typeomegalib.tooltip.hatch.laser": "Laser Hatches",
   "typeomegalib.tooltip.hatch.multi_amp": "Multi-Amp",
@@ -7,6 +9,8 @@
   "typeomegalib.tooltip.list.or": "%s or %s",
   "typeomegalib.tooltip.machine_type": "Machine Type: %s",
   "typeomegalib.tooltip.modes": "Modes: %s",
+  "typeomegalib.tooltip.page": "Page %s/%s",
+  "typeomegalib.tooltip.page.hint": "[%s] next, Shift+[%s] back, Ctrl+Scroll",
   "typeomegalib.tooltip.part.computation_data_reception": "Computation Data Reception Hatch",
   "typeomegalib.tooltip.part.computation_data_transmission": "Computation Data Transmission Hatch",
   "typeomegalib.tooltip.part.data_access": "Data Access Hatch",

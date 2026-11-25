@@ -42,6 +42,10 @@ public final class MultiblockTooltip {
         Hatch.values();
         TooltipTexts.MACHINE_TYPE.key();
         StructureTexts.init();
+        com.typeomega.lib.tooltip.paging.PagingTexts.init();
+        if (net.minecraftforge.fml.loading.FMLEnvironment.dist == net.minecraftforge.api.distmarker.Dist.CLIENT) {
+            com.typeomega.lib.tooltip.paging.TooltipPaging.init();
+        }
     }
 
     /** The GTNH-style tooltip (GTIA-D-410); prefer it for new multiblocks. */
