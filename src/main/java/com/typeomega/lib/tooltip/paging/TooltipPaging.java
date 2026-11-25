@@ -14,6 +14,8 @@ import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -60,6 +62,7 @@ public final class TooltipPaging {
     /** Called once from the lib constructor on the client only. */
     public static void init() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(TooltipPaging::registerKey);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, TooltipPaging::onTooltip);
         MinecraftForge.EVENT_BUS.addListener(TooltipPaging::onGather);
         MinecraftForge.EVENT_BUS.addListener(TooltipPaging::onKey);
         MinecraftForge.EVENT_BUS.addListener(TooltipPaging::onScroll);
@@ -68,6 +71,12 @@ public final class TooltipPaging {
     private static void registerKey(RegisterKeyMappingsEvent event) {
         key = new KeyMapping(PagingTexts.KEY.key(), InputConstants.KEY_TAB, PagingTexts.CATEGORY.key());
         event.register(key);
+    }
+
+    private static void onTooltip(ItemTooltipEvent event) {
+        var id = ForgeRegistries.ITEMS.getKey(event.getItemStack().getItem());
+        if (id == null || !NAMESPACES.contains(id.getNamespace())) return;
+        EmiModLine.dropIfEmiAppends(event.getToolTip(), id.getNamespace());
     }
 
     private static void onGather(RenderTooltipEvent.GatherComponents event) {
