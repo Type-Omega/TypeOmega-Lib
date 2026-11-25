@@ -17,9 +17,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 
-@Mod(GTIALib.MOD_ID)
+@Mod(TypeOmegaLib.MOD_ID)
 @SuppressWarnings("removal")
-public final class GTIALib {
+public final class TypeOmegaLib {
 
     public static final String MOD_ID = "typeomegalib";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
@@ -27,12 +27,12 @@ public final class GTIALib {
     /** {@code -Dtypeomegalib.junitReport=<file>} writes GameTest results as JUnit XML, for CI. */
     public static final String JUNIT_PROPERTY = "typeomegalib.junitReport";
 
-    public GTIALib() {
+    public TypeOmegaLib() {
         MultiblockTooltip.init();
         com.typeomega.lib.ui.UiTexts.init();
         ModuleRegistry.init();
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(GTIALib::gatherData);
-        MinecraftForge.EVENT_BUS.addListener(GTIALib::serverStarting);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(TypeOmegaLib::gatherData);
+        MinecraftForge.EVENT_BUS.addListener(TypeOmegaLib::serverStarting);
         MinecraftForge.EVENT_BUS.addListener(BenchCommand::register);
         MinecraftForge.EVENT_BUS.addListener(BenchCommand::onServerTick);
     }

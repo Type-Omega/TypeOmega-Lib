@@ -4,7 +4,7 @@
 
 # TypeOmega Lib
 
-Shared library of the [Type Omega](https://github.com/Type-Omega) mods (TypeOmegaCore, GTNA, Agronomica and future addons). Formerly GTIA Lib. Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
+Shared library of the [Type Omega](https://github.com/Type-Omega) mods (TypeOmegaCore, GTNA, Agronomica and future addons). Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
 
 > **Status: 0.6.0.** The API may still change before 1.0.
 
@@ -19,7 +19,7 @@ Community: [Discord](https://discord.gg/TW5vugknk5) · questions, bug reports an
 | `data` | `Int128` (128-bit counts, from GTLCore via GTNA), `BlockPosLongSet` and `BlockPosHashing` (fast sets and maps of positions for huge structures) |
 | `module` | `ModuleRegistry`: multiblock modules (extra structures that unlock abilities when they match), from Java or KubeJS. GTNA checks them on every multiblock; its `GTNASubPatterns` forwards here |
 | `perf` | `/typeomegalib bench grid <machine> <count> [input]` places a force-loaded grid of GT machines (kept running when an input item is given) and `/typeomegalib bench mspt <ticks>` logs the average tick time; used by the modpack's `tools/perf_bench.py` |
-| `ui` | Illustrated recipe screens in the GTNH style (GTIA-D-435): `PanelLayout` places slots, tanks and marks over a pixel-art picture of the process; `IllustratedPanel` draws it on the GTCEu bevelled grey with the text lines under it (`InfoLines`: Total, Usage with the tier colour, Time, then the recipe type's own lines). `IllustratedRecipeUI` is a `GTRecipeTypeUI` for `setRecipeUI`; `IllustratedRecipeUI.rtuiLines` gives the same lines to a recipe type whose screen is a `.rtui`; `DisplaySlots` makes read-only slots for an EMI page of its own (LDLib `ModularEmiRecipe`); `IllustratedTab` puts the same panel on a machine GUI. Widgets: `ParticleWidget`, `ArrowWidget`, `ProgressBarWidget`, `InfoLinesWidget` |
+| `ui` | Illustrated recipe screens in the GTNH style (D-435): `PanelLayout` places slots, tanks and marks over a pixel-art picture of the process; `IllustratedPanel` draws it on the GTCEu bevelled grey with the text lines under it (`InfoLines`: Total, Usage with the tier colour, Time, then the recipe type's own lines). `IllustratedRecipeUI` is a `GTRecipeTypeUI` for `setRecipeUI`; `IllustratedRecipeUI.rtuiLines` gives the same lines to a recipe type whose screen is a `.rtui`; `DisplaySlots` makes read-only slots for an EMI page of its own (LDLib `ModularEmiRecipe`); `IllustratedTab` puts the same panel on a machine GUI. Widgets: `ParticleWidget`, `ArrowWidget`, `ProgressBarWidget`, `InfoLinesWidget` |
 | `test` | GameTest kit: `Previews.place` builds a multiblock from its preview; `Sweeps` checks every multiblock, GT recipe, machine tooltip and translation of a mod; `-Dtypeomegalib.junitReport=<file>` writes JUnit XML for CI |
 
 Planned: registration helpers, batched field sync, recipe helpers and measured performance work. See the [developer docs](https://type-omega.github.io/TypeOmega-Dev-Doc/).

@@ -10,7 +10,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 /**
- * Coloured arguments for tooltip lines, following GTIA-D-410: green for what the player configures, cyan for units
+ * Coloured arguments for tooltip lines, following D-410: green for what the player configures, cyan for units
  * and derived values, white for highlighted terms, bold for emphasis such as "NOT".
  */
 public final class TooltipArg {

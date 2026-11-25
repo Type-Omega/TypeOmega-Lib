@@ -20,7 +20,7 @@ import net.minecraftforge.event.TickEvent;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
-import com.typeomega.lib.GTIALib;
+import com.typeomega.lib.TypeOmegaLib;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public final class BenchCommand {
     private BenchCommand() {}
 
     public static void register(RegisterCommandsEvent event) {
-        event.getDispatcher().register(Commands.literal(GTIALib.MOD_ID).requires(s -> s.hasPermission(2))
+        event.getDispatcher().register(Commands.literal(TypeOmegaLib.MOD_ID).requires(s -> s.hasPermission(2))
                 .then(Commands.literal("bench")
                         .then(Commands.literal("grid")
                                 .then(Commands.argument("machine", ResourceLocationArgument.id())
@@ -82,7 +82,7 @@ public final class BenchCommand {
                 WORKING.add(machine);
         }
         workingInput = input;
-        GTIALib.LOGGER.info("BENCH grid {} x{}", id, count);
+        TypeOmegaLib.LOGGER.info("BENCH grid {} x{}", id, count);
         ctx.getSource().sendSuccess(() -> Component.literal("placed " + count + " " + id), false);
         return count;
     }
@@ -134,7 +134,7 @@ public final class BenchCommand {
         worstNanos = Math.max(worstNanos, took);
         measured++;
         if (--remaining == 0) {
-            GTIALib.LOGGER.info(String.format(java.util.Locale.ROOT, "BENCH mspt=%.3f worst=%.3f ticks=%d",
+            TypeOmegaLib.LOGGER.info(String.format(java.util.Locale.ROOT, "BENCH mspt=%.3f worst=%.3f ticks=%d",
                     totalNanos / 1e6 / measured,
                     worstNanos / 1e6, measured));
         }

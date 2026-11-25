@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * Read-only slots and tanks for an illustrated panel that is not a GTCEu recipe: an EMI page of its own or a machine
- * tab (GTIA-D-435, U6). Each one tells EMI and JEI its role, so LDLib's {@code ModularEmiRecipe} lists it as an input,
+ * tab (D-435, U6). Each one tells EMI and JEI its role, so LDLib's {@code ModularEmiRecipe} lists it as an input,
  * output or catalyst and the recipe tree and "uses" lookups find it.
  */
 public final class DisplaySlots {

@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Multiblock tooltip in the GTNH layout (GTIA-D-410): {@code Machine Type:} with yellow types, short description
+ * Multiblock tooltip in the GTNH layout (D-410): {@code Machine Type:} with yellow types, short description
  * lines, separators, table rows, warnings, the green supported-hatches line and the mod name in blue italics. Every
  * text is a {@link Tr} with arguments, so numbers come from the machine's balance definition.
  * <p>
- * There is no "Hold [LSHIFT] to display structure guidelines" line on purpose (GTIA-D-428): Shift does not show the
+ * There is no "Hold [LSHIFT] to display structure guidelines" line on purpose (D-428): Shift does not show the
  * structure in GTCEu, so the line would promise something the game does not do.
  * <p>
  * The result plugs into GTCEu: {@code .tooltips(tooltip.toArray())} or
@@ -70,7 +70,7 @@ public final class MultiblockTooltipBuilder {
         return add(text.component(args).withStyle(ChatFormatting.RED));
     }
 
-    /** Optional humour line (GTIA-D-343), grey italics. */
+    /** Optional humour line (D-343), grey italics. */
     public MultiblockTooltipBuilder humor(Tr text, Object... args) {
         return add(text.component(args).withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
     }
@@ -109,7 +109,7 @@ public final class MultiblockTooltipBuilder {
 
     /**
      * "Causes N Pollution per second", as in GTNH; skipped when the machine does not pollute. Type Omega does not use
-     * it (GTIA-D-431).
+     * it (D-431).
      */
     public MultiblockTooltipBuilder pollution(int perSecond) {
         if (perSecond <= 0) return this;
@@ -117,11 +117,11 @@ public final class MultiblockTooltipBuilder {
     }
 
     /**
-     * Starts the structure section (GTIA-D-430): "Dimensions: WxHxD (Width x Height x Depth)" and "Structure:".
-     * It is always shown: GTCEu has no Shift page for it (GTIA-D-428).
+     * Starts the structure section (D-430): "Dimensions: WxHxD (Width x Height x Depth)" and "Structure:".
+     * It is always shown: GTCEu has no Shift page for it (D-428).
      * <p>
      * Type Omega does not use the structure methods ({@code beginStructure}, {@code controller}, {@code casing},
-     * {@code tieredCasing}, {@code hatch}, {@code structureNote}, {@code channel}, {@code structure}): GTIA-D-431
+     * {@code tieredCasing}, {@code hatch}, {@code structureNote}, {@code channel}, {@code structure}): D-431
      * keeps the structure section and the pollution line out of its tooltips. Other mods may still call them.
      */
     public MultiblockTooltipBuilder beginStructure(int width, int height, int depth) {

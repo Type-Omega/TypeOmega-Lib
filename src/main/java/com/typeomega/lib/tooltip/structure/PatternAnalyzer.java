@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Turns the positions of a multiblock pattern into the counts of the tooltip structure section (GTIA-D-430). It
+ * Turns the positions of a multiblock pattern into the counts of the tooltip structure section (D-430). It
  * knows nothing about GTCEu: {@link GtceuPatterns} reads the pattern into {@link Slot}s, so the counting rules can be
  * tested without Minecraft.
  * <p>

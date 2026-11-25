@@ -79,7 +79,7 @@ public final class Tr {
         return Component.translatable(key, args);
     }
 
-    /** Every declared entry whose key starts with {@code prefix} (for example {@code "gtia."}), sorted by key. */
+    /** Every declared entry whose key starts with {@code prefix} (for example {@code "typeomega."}), sorted by key. */
     public static List<Tr> entries(String prefix) {
         List<Tr> out = new ArrayList<>();
         for (Tr entry : ENTRIES.values()) {

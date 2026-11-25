@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
-import com.typeomega.lib.GTIALib;
+import com.typeomega.lib.TypeOmegaLib;
 import com.typeomega.lib.lang.Tr;
 import com.typeomega.lib.test.Sweeps;
 import com.typeomega.lib.tooltip.MultiblockTooltip;
@@ -17,7 +17,7 @@ import com.typeomega.lib.tooltip.structure.GtceuPatterns;
 
 /** Checks the library against itself and against GTCEu's own content. */
 @PrefixGameTestTemplate(false)
-@GameTestHolder(GTIALib.MOD_ID)
+@GameTestHolder(TypeOmegaLib.MOD_ID)
 public final class LibGameTests {
 
     private LibGameTests() {}
@@ -65,7 +65,7 @@ public final class LibGameTests {
 
     @GameTest(template = "qa_empty_5x5", timeoutTicks = 20)
     public static void libraryNamesExistInAllThreeLanguages(GameTestHelper h) {
-        Sweeps.namesInAllLanguages(GTIALib.MOD_ID).assertClean(h, 4);
+        Sweeps.namesInAllLanguages(TypeOmegaLib.MOD_ID).assertClean(h, 4);
         h.succeed();
     }
 

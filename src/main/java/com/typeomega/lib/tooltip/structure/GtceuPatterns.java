@@ -37,9 +37,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 /**
- * Reads a GTCEu multiblock pattern into a {@link StructureInfo} for the tooltip structure section (GTIA-D-430), so
+ * Reads a GTCEu multiblock pattern into a {@link StructureInfo} for the tooltip structure section (D-430), so
  * dimensions, block counts and hatch limits come from the pattern the game checks. Results are cached per machine.
- * Type Omega does not show the section (GTIA-D-431) and uses this only for the "Supports" line and the modes.
+ * Type Omega does not show the section (D-431) and uses this only for the "Supports" line and the modes.
  */
 public final class GtceuPatterns {
 

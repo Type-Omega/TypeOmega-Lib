@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * What the structure section of a multiblock tooltip shows (GTIA-D-430): the dimensions, where the controller goes,
+ * What the structure section of a multiblock tooltip shows (D-430): the dimensions, where the controller goes,
  * every block with how many the structure needs, and every hatch with how many it takes and where it may go.
  * {@code com.typeomega.lib.tooltip.structure.GtceuPatterns} fills it from a GTCEu pattern, so the numbers come from
  * the pattern and not from hand counts.
  * <p>
- * Type Omega does not show this section (GTIA-D-431); it only reads {@link #abilities()}, {@link #multiAmp()} and
+ * Type Omega does not show this section (D-431); it only reads {@link #abilities()}, {@link #multiAmp()} and
  * {@link #wireless()} for the "Supports" line.
  *
  * @param controller where the controller sits, or {@code null} when the pattern has none

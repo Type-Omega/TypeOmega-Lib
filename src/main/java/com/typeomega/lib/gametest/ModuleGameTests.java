@@ -8,12 +8,12 @@ import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
-import com.typeomega.lib.GTIALib;
+import com.typeomega.lib.TypeOmegaLib;
 import com.typeomega.lib.module.ModuleRegistry;
 
 /** The module registry builds registered structures once, and KubeJS modules can be cleared on reload. */
 @PrefixGameTestTemplate(false)
-@GameTestHolder(GTIALib.MOD_ID)
+@GameTestHolder(TypeOmegaLib.MOD_ID)
 public final class ModuleGameTests {
 
     private ModuleGameTests() {}

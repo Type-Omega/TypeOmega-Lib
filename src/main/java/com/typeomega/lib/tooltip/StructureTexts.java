@@ -8,7 +8,7 @@ import com.typeomega.lib.lang.Tr;
 import java.util.List;
 import java.util.Map;
 
-/** Texts of the structure section (GTIA-D-430), worded like the GTNH MultiblockTooltipBuilder. */
+/** Texts of the structure section (D-430), worded like the GTNH MultiblockTooltipBuilder. */
 public final class StructureTexts {
 
     static final Tr DIMENSIONS = Tr.of("typeomegalib.tooltip.structure.dimensions",

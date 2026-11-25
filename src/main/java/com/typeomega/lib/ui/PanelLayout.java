@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Where things go on an illustrated recipe panel (GTIA-D-435): the picture of the process, the slots and tanks placed
+ * Where things go on an illustrated recipe panel (D-435): the picture of the process, the slots and tanks placed
  * inside it, and room for the text lines below, GTNH style. Plain data, so a layout is checked by unit tests and by
  * GameTests without opening a screen. Coordinates are in GUI pixels, relative to the top-left corner of the picture.
  */

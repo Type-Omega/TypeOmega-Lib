@@ -48,7 +48,7 @@ public final class MultiblockTooltip {
         }
     }
 
-    /** The GTNH-style tooltip (GTIA-D-410); prefer it for new multiblocks. */
+    /** The GTNH-style tooltip (D-410); prefer it for new multiblocks. */
     public static MultiblockTooltipBuilder builder() {
         return new MultiblockTooltipBuilder();
     }

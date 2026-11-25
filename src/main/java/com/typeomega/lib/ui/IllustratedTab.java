@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 /**
  * A side tab of a GTCEu machine GUI that shows an illustrated panel, so the machine shows the same picture as its EMI
- * page (GTIA-D-435, U6). Attach it from {@code attachSideTabs}.
+ * page (D-435, U6). Attach it from {@code attachSideTabs}.
  */
 public record IllustratedTab(IGuiTexture icon, Component title, Supplier<Widget> page) implements IFancyUIProvider {
 

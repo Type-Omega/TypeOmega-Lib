@@ -6,7 +6,7 @@ import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
-import com.typeomega.lib.GTIALib;
+import com.typeomega.lib.TypeOmegaLib;
 import com.typeomega.lib.data.BlockPosHashing;
 import com.typeomega.lib.data.BlockPosLongSet;
 import com.typeomega.lib.data.Int128;
@@ -16,7 +16,7 @@ import java.util.Random;
 
 /** Data structures checked against an oracle (BigInteger, HashSet semantics). */
 @PrefixGameTestTemplate(false)
-@GameTestHolder(GTIALib.MOD_ID)
+@GameTestHolder(TypeOmegaLib.MOD_ID)
 public final class DataGameTests {
 
     private static final BigInteger MOD = BigInteger.ONE.shiftLeft(128);

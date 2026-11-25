@@ -2,7 +2,7 @@ package com.typeomega.lib.tooltip;
 
 import com.typeomega.lib.lang.Tr;
 
-/** Shared texts of the GTNH-style multiblock tooltip (GTIA-D-410), declared once for every mod. */
+/** Shared texts of the GTNH-style multiblock tooltip (D-410), declared once for every mod. */
 final class TooltipTexts {
 
     static final Tr MACHINE_TYPE = Tr.of("typeomegalib.tooltip.machine_type", "Machine Type: %s",

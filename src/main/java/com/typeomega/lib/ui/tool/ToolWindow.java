@@ -23,7 +23,7 @@ import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
 /**
- * A tool window in the GTNH look (GTIA-D-435): the GTCEu bevelled grey, a row of tabs on top and one page per tab.
+ * A tool window in the GTNH look (D-435): the GTCEu bevelled grey, a row of tabs on top and one page per tab.
  * Used by held-item tools such as the Nexus Terminal; the page widgets come from the mod, the frame and the small
  * controls (toggles, number fields, buttons) come from here so every Type Omega tool looks the same.
  */

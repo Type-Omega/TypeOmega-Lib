@@ -2,7 +2,7 @@ package com.typeomega.lib.ui;
 
 import com.typeomega.lib.lang.Tr;
 
-/** Texts of the illustrated recipe panels (GTIA-D-435), declared once for every mod. */
+/** Texts of the illustrated recipe panels (D-435), declared once for every mod. */
 public final class UiTexts {
 
     public static final Tr TOTAL = Tr.of("typeomegalib.ui.total", "Total: %s EU", "Total: %s EU", "总计：%s EU");
