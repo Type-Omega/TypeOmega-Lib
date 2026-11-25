@@ -14,9 +14,9 @@ public final class TooltipPager {
     /**
      * One body line.
      *
-     * @param height pixel height, already counting wrapped rows
+     * @param height          pixel height, already counting wrapped rows
      * @param softBreakBefore a page may start here (separator, section header, blank line)
-     * @param droppable removed when it lands at the start or end of a page (separators)
+     * @param droppable       removed when it lands at the start or end of a page (separators)
      */
     public record Line(int height, boolean softBreakBefore, boolean droppable) {}
 
@@ -26,7 +26,7 @@ public final class TooltipPager {
     private TooltipPager() {}
 
     /**
-     * @param body the lines after the header
+     * @param body     the lines after the header
      * @param capacity pixels available for body lines on one page (screen minus header, footer and padding)
      * @return one page when everything fits, otherwise the pages in order; never empty for a non-empty body
      */

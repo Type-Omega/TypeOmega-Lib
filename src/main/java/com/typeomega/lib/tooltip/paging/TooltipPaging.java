@@ -1,7 +1,5 @@
 package com.typeomega.lib.tooltip.paging;
 
-import com.mojang.datafixers.util.Either;
-import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -19,7 +17,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import com.typeomega.lib.lang.Tr;
+import com.mojang.blaze3d.platform.InputConstants;
+import com.mojang.datafixers.util.Either;
 
 import java.util.ArrayList;
 import java.util.List;
