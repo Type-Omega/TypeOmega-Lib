@@ -35,6 +35,8 @@ dependencies {
 }
 ```
 
+Releases published before the rename use the legacy coordinates `com.gtinfinityascension:gtialib` and stay available on the same Maven.
+
 ```java
 Tr name = Tr.of("mymod.thing", "Thing", "Coisa", "东西");
 
