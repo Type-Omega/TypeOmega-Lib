@@ -34,12 +34,10 @@ public final class TooltipPager {
         int total = 0;
         for (Line line : body) total += line.height();
         if (total <= capacity || body.isEmpty()) return List.of(new Page(0, body.size()));
-        // EN: GTNH-style: the fewest pages that fit, then the lines are spread evenly over them, so no page is left
-        // EN: with two lines; a page ends at a section break unless that costs more than a fifth of a page.
-        // PT: Estilo GTNH: o menor número de páginas que cabe, e as linhas divididas por igual entre elas, sem página
-        // PT: com duas linhas; a página termina numa quebra de seção, salvo se isso custar mais de um quinto da página.
-        // ZH: GTNH 风格：取能容纳的最少页数，再把各行平均分配，避免只剩两行的页；
-        // ZH: 页面尽量在段落分隔处结束，除非代价超过五分之一页。
+        // EN: GTNH-style: whole sections per page, on as few pages as possible, as even as the sections allow.
+        // PT: Estilo GTNH: seções inteiras por página, no menor número de páginas, o mais parelhas que as seções
+        // permitem.
+        // ZH: GTNH 风格：每页放完整段落，页数尽量少，并在段落允许的范围内尽量均匀。
         // EN: One extra page is also tried: it wins when the fewest pages would have to cut sections in half.
         // PT: Também testa uma página a mais: ela ganha quando o mínimo de páginas cortaria seções ao meio.
         // ZH: 同时尝试多一页：当最少页数会把段落切半时，多一页更好。
@@ -47,7 +45,8 @@ public final class TooltipPager {
         List<Page> best = null;
         double bestCost = Double.POSITIVE_INFINITY;
         int tried = 0;
-        for (int count = Math.max(2, (total + capacity - 1) / capacity); count <= body.size() && tried < 2; count++) {
+        for (int count = Math.max(2, (total + capacity - 1) / capacity); count <= body.size() &&
+                (tried < 2 || bestCost >= hardLimit(capacity, body.size())); count++) {
             double[] cost = new double[1];
             List<Page> pages = split(body, capacity, count, total / (double) count, cost);
             if (pages == null) continue;
@@ -67,7 +66,12 @@ public final class TooltipPager {
     /** Best split into exactly {@code count} pages, or {@code null} when they cannot hold the body. */
     private static List<Page> split(List<Line> body, int capacity, int count, double target, double[] total) {
         int n = body.size();
-        double hardBreak = Math.pow(capacity / 5.0, 2);
+        // EN: As in GTNH each page is its own topic: a page never ends inside a section unless that section alone is
+        // EN: taller than the page.
+        // PT: Como no GTNH cada página é um assunto: a página nunca termina no meio de uma seção, salvo se a seção
+        // PT: sozinha for mais alta que a página.
+        // ZH: 与 GTNH 一样每页是一个主题：除非某段本身比一页还高，否则页面绝不在段落中间结束。
+        double hardBreak = hardLimit(capacity, n);
         double[][] cost = new double[count + 1][n + 1];
         int[][] from = new int[count + 1][n + 1];
         for (double[] row : cost) java.util.Arrays.fill(row, Double.POSITIVE_INFINITY);
@@ -99,6 +103,11 @@ public final class TooltipPager {
             end = start;
         }
         return List.of(pages);
+    }
+
+    /** Cost of one break inside a section; any split without one costs less. */
+    private static double hardLimit(int capacity, int lines) {
+        return 1000.0 * capacity * capacity * lines;
     }
 
     private static int[] trim(List<Line> body, int start, int end) {

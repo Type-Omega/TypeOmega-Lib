@@ -58,13 +58,29 @@ class TooltipPagerTest {
     }
 
     @Test
-    void earlySeparatorIsIgnoredWhenItWouldWastePage() {
+    void oversizedSectionIsSplitAndTheShortOneStaysWhole() {
         List<TooltipPager.Line> body = new ArrayList<>();
         body.add(text());
         body.add(separator());
         for (int i = 0; i < 20; i++) body.add(text());
         List<TooltipPager.Page> pages = TooltipPager.paginate(body, 100);
-        assertTrue(pages.get(0).to() - pages.get(0).from() >= 6);
+        assertEquals(new TooltipPager.Page(0, 1), pages.get(0));
+        for (TooltipPager.Page page : pages) assertTrue((page.to() - page.from()) * 10 <= 100);
+    }
+
+    @Test
+    void eachPageHoldsWholeSections() {
+        List<TooltipPager.Line> body = new ArrayList<>();
+        int[] sizes = { 4, 7, 3, 8, 5 };
+        for (int s = 0; s < sizes.length; s++) {
+            if (s > 0) body.add(separator());
+            for (int i = 0; i < sizes[s]; i++) body.add(text());
+        }
+        for (TooltipPager.Page page : TooltipPager.paginate(body, 100)) {
+            boolean startsSection = page.from() == 0 || body.get(page.from() - 1).softBreakBefore();
+            boolean endsSection = page.to() == body.size() || body.get(page.to()).softBreakBefore();
+            assertTrue(startsSection && endsSection, "page " + page + " cuts a section");
+        }
     }
 
     @Test
