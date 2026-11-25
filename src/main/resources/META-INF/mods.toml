@@ -11,7 +11,7 @@ issueTrackerURL = "https://github.com/Type-Omega/TypeOmega-Lib/issues"
     authors = "${mod_author}"
     logoFile = "assets/typeomegalib/textures/logo.png"
     description = '''
-Shared library of the GregTech Infinity Ascension mods: three-language text, multiblock tooltips and a GameTest kit.
+Shared library of the Type Omega mods: three-language text, multiblock tooltips and a GameTest kit.
 '''
 
     [[dependencies.${mod_id}]]

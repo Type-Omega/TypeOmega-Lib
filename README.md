@@ -4,7 +4,7 @@
 
 # TypeOmega Lib
 
-Shared library of the [GregTech Infinity Ascension](https://github.com/Type-Omega) mods (GTIACore, GTNA, Agronomica and future addons). Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
+Shared library of the [Type Omega](https://github.com/Type-Omega) mods (TypeOmegaCore, GTNA, Agronomica and future addons). Formerly GTIA Lib. Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
 
 > **Status: 0.6.0.** The API may still change before 1.0.
 
