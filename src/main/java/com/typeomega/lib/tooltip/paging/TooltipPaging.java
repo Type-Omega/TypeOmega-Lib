@@ -25,7 +25,8 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
- * Pages item tooltips that are taller than the screen at the current GUI scale (the GTNH multi-page idea). Only items
+ * Pages item tooltips that are taller than the screen at the current GUI scale, or longer than 20 rows (the GTNH
+ * multi-page idea). Only items
  * of opted-in namespaces are paged ({@link #enable(String)}); a tooltip that fits is left exactly as it is.
  * <p>
  * Pages break at separators and section headers when possible. The player turns pages with the "Next tooltip page"
@@ -36,6 +37,7 @@ public final class TooltipPaging {
     private static final Set<String> NAMESPACES = new CopyOnWriteArraySet<>(
             List.of("typeomega", "typeomegalib", "gtna", "agronomica"));
     private static final int ROW = 10;
+    private static final int MAX_PAGE_ROWS = 20;
     // EN: Vanilla draws 3px of padding above and below, and shifts the box to keep 4px from the edge.
     // PT: O vanilla desenha 3px de margem acima e abaixo e mantém 4px da borda da tela.
     // ZH: 原版上下各有3像素内边距，并与屏幕边缘保持4像素。
@@ -92,7 +94,11 @@ public final class TooltipPaging {
         int wrap = wrapWidth(mc, font, lines, screenWidth);
         List<TooltipPager.Line> body = new ArrayList<>();
         for (int i = 1; i < lines.size(); i++) body.add(describe(font, lines.get(i), wrap));
-        int capacity = screenHeight - FRAME - HEADER - FOOTER - (emiAppends ? ROW : 0);
+        // EN: Long tooltips are paged even on a tall screen, like GTNH: a page shows at most MAX_PAGE_ROWS rows.
+        // PT: Tooltips longas são paginadas mesmo em tela alta, como no GTNH: a página mostra no máximo MAX_PAGE_ROWS
+        // PT: linhas.
+        // ZH: 与 GTNH 一样，即使屏幕足够高，长提示也会分页：每页最多显示 MAX_PAGE_ROWS 行。
+        int capacity = Math.min(MAX_PAGE_ROWS * ROW, screenHeight - FRAME - HEADER - FOOTER - (emiAppends ? ROW : 0));
         List<TooltipPager.Page> pages = TooltipPager.paginate(body, capacity);
         if (pages.size() < 2) {
             pageCount = 1;
