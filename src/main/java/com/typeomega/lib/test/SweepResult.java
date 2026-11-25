@@ -14,15 +14,15 @@ public final class SweepResult {
     private int checked;
     private final List<String> failures = new ArrayList<>();
 
-    SweepResult(String what) {
+    public SweepResult(String what) {
         this.what = what;
     }
 
-    void checked() {
+    public void checked() {
         checked++;
     }
 
-    void fail(String failure) {
+    public void fail(String failure) {
         failures.add(failure);
     }
 
