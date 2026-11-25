@@ -60,6 +60,8 @@
   "typeomegalib.tooltip.supports": "支持%s！",
   "typeomegalib.ui.continuous": "耗时：持续运行",
   "typeomegalib.ui.output": "产能：%s EU/t（%s）",
+  "typeomegalib.ui.report.copied": "坐标已复制",
+  "typeomegalib.ui.report.show": "显示方框",
   "typeomegalib.ui.time": "耗时：%s 秒",
   "typeomegalib.ui.total": "总计：%s EU",
   "typeomegalib.ui.usage": "耗能：%s EU/t（%s）"

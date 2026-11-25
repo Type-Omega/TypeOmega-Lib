@@ -15,6 +15,11 @@ public final class UiTexts {
     public static final Tr CONTINUOUS = Tr.of("typeomegalib.ui.continuous", "Time: runs continuously",
             "Tempo: funciona sem parar", "耗时：持续运行");
 
+    public static final Tr REPORT_SHOW = Tr.of("typeomegalib.ui.report.show", "Show boxes", "Mostrar caixas",
+            "显示方框");
+    public static final Tr REPORT_COPIED = Tr.of("typeomegalib.ui.report.copied", "Coordinates copied",
+            "Coordenadas copiadas", "坐标已复制");
+
     private UiTexts() {}
 
     public static void init() {}

@@ -60,6 +60,8 @@
   "typeomegalib.tooltip.supports": "Suporta %s!",
   "typeomegalib.ui.continuous": "Tempo: funciona sem parar",
   "typeomegalib.ui.output": "Geração: %s EU/t (%s)",
+  "typeomegalib.ui.report.copied": "Coordenadas copiadas",
+  "typeomegalib.ui.report.show": "Mostrar caixas",
   "typeomegalib.ui.time": "Tempo: %s segundos",
   "typeomegalib.ui.total": "Total: %s EU",
   "typeomegalib.ui.usage": "Consumo: %s EU/t (%s)"
