@@ -25,17 +25,20 @@ final class EmiModLine {
     // PT: na lista) quando as duas opções estão ligadas, como no pack; aí a nossa última linha fica duplicada.
     // ZH: 当两个选项都开启时（整合包即如此），EMI 会在 ItemTooltipEvent 之后追加模组名
     // ZH: （getTooltipLines 返回处的 mixin 及其列表中），此时我们自己的最后一行就重复了。
-    static void dropIfEmiAppends(List<Component> lines, String namespace) {
-        if (lines.size() < 2 || !enabled(APPEND_MOD_ID) || !enabled(APPEND_ITEM_MOD_ID)) return;
+    /** @return whether EMI appends the mod name (one more line below the tooltip) */
+    static boolean dropIfEmiAppends(List<Component> lines, String namespace) {
+        if (!enabled(APPEND_MOD_ID) || !enabled(APPEND_ITEM_MOD_ID)) return false;
+        if (lines.size() < 2) return true;
         Component last = lines.get(lines.size() - 1);
         Style style = last.getStyle();
         if (!style.isItalic() || style.getColor() == null ||
                 style.getColor().getValue() != ChatFormatting.BLUE.getColor()) {
-            return;
+            return true;
         }
         String name = ModList.get().getModContainerById(namespace)
                 .map(c -> c.getModInfo().getDisplayName()).orElse(null);
         if (last.getString().equals(name)) lines.remove(lines.size() - 1);
+        return true;
     }
 
     private static boolean enabled(Field field) {
