@@ -20,6 +20,7 @@ import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
 import com.lowdragmc.lowdraglib.utils.Size;
 
+import java.util.List;
 import java.util.function.BiConsumer;
 
 /**
@@ -82,7 +83,7 @@ public class IllustratedRecipeUI extends GTRecipeTypeUI {
             progress.setId("progress");
             return progress;
         });
-        return panel;
+        return panel.flows();
     }
 
     private static IO io(PanelLayout.Slot slot) {
@@ -154,8 +155,29 @@ public class IllustratedRecipeUI extends GTRecipeTypeUI {
         var panel = recipeWidget.getWidgetsByType(IllustratedPanel.class);
         var lines = new InfoLinesWidget(lines(recipe).build());
         if (panel.isEmpty()) recipeWidget.addWidget(lines);
-        else panel.get(0).lines(lines);
+        else {
+            removeUnusedSlots(recipe, panel.get(0));
+            panel.get(0).lines(lines);
+        }
         recipeWidget.addWidget(new DefaultTextHider());
+    }
+
+    // EN: The layout has a slot for every input and output the type allows; a recipe that uses fewer leaves them
+    // EN: empty, so they are taken off its page (GTNH shows only what the recipe uses).
+    // PT: O layout tem um slot para cada entrada e saída que o tipo permite; receita que usa menos os deixa vazios,
+    // PT: então eles saem da página dela (o GTNH só mostra o que a receita usa).
+    // ZH: 布局为该类型允许的每个输入输出都留了槽位；配方用得少时这些槽位为空，因此从该页移除（GTNH 只显示配方用到的）。
+    static void removeUnusedSlots(GTRecipe recipe, IllustratedPanel panel) {
+        for (var slot : panel.layout().slots()) {
+            var cap = slot.kind() == PanelLayout.Kind.ITEM ? ItemRecipeCapability.CAP : FluidRecipeCapability.CAP;
+            var io = io(slot);
+            var contents = (io == IO.IN ? recipe.inputs : recipe.outputs).getOrDefault(cap, List.of());
+            if (slot.index() < contents.size()) continue;
+            String id = cap.slotName(io, slot.index());
+            for (Widget widget : List.copyOf(panel.widgets)) {
+                if (id.equals(widget.getId())) panel.removeWidget(widget);
+            }
+        }
     }
 
     /**

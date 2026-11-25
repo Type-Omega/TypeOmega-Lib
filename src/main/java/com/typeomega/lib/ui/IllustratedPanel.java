@@ -57,6 +57,18 @@ public class IllustratedPanel extends WidgetGroup {
         return this;
     }
 
+    /** Animates every arrow the layout marks with a {@code flow_} id ({@link FlowArrowWidget}). */
+    public IllustratedPanel flows() {
+        if (layout.art() == null) return this;
+        for (var mark : layout.marks()) {
+            if (!mark.id().startsWith(FlowArrowWidget.MARK_PREFIX)) continue;
+            var widget = new FlowArrowWidget(layout.art(), mark);
+            widget.setSelfPosition(PanelLayout.PAD + mark.x(), PanelLayout.PAD + mark.y());
+            addWidget(widget);
+        }
+        return this;
+    }
+
     /** Puts the text lines under the picture. */
     public IllustratedPanel lines(InfoLinesWidget lines) {
         lines.setSelfPosition(PanelLayout.PAD + 1, layout.linesTop());

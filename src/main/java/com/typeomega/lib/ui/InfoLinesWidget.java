@@ -89,8 +89,23 @@ public class InfoLinesWidget extends Widget {
     public void drawInBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
         var font = Minecraft.getInstance().font;
         int y = getPositionY() + 1;
+        int room = getSizeWidth();
         for (var line : lines) {
-            graphics.drawString(font, line, getPositionX(), y, TEXT_COLOUR, false);
+            int width = font.width(line);
+            if (width <= room || room <= 0) {
+                graphics.drawString(font, line, getPositionX(), y, TEXT_COLOUR, false);
+            } else {
+                // EN: A line wider than the panel is drawn smaller, so it never runs out of the frame.
+                // PT: Linha mais larga que o painel é desenhada menor, para nunca sair da moldura.
+                // ZH: 比面板更宽的行会缩小绘制，绝不超出边框。
+                float scale = room / (float) width;
+                var pose = graphics.pose();
+                pose.pushPose();
+                pose.translate(getPositionX(), y + (font.lineHeight * (1 - scale)) / 2f, 0);
+                pose.scale(scale, scale, 1);
+                graphics.drawString(font, line, 0, 0, TEXT_COLOUR, false);
+                pose.popPose();
+            }
             y += PanelLayout.LINE_HEIGHT;
         }
     }
