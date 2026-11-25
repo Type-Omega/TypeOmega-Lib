@@ -61,7 +61,7 @@ public abstract class GameTestRegistryMixin {
             boolean namespaceAllowed = allowedNamespaces.isEmpty() ||
                     allowedNamespaces.contains(ForgeGameTestHooks.getTemplateNamespace(testMethod));
             if (namespaceAllowed && !filter.matchesMethod(testMethod)) {
-                GameTestFilter.recordSkipped(1);
+                GameTestFilter.recordSkipped(GameTestFilter.isHeavy(testMethod));
                 ci.cancel();
                 return;
             }
@@ -97,7 +97,7 @@ public abstract class GameTestRegistryMixin {
                 TestFunction fn = list.get(i);
                 if (!filter.matchesGenerated(testMethod, fn)) {
                     list.remove(i);
-                    GameTestFilter.recordSkipped(1);
+                    GameTestFilter.recordSkipped(GameTestFilter.isHeavy(testMethod, fn));
                 }
             }
             if (list.size() == before && !hadClass) {
